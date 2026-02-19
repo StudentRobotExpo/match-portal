@@ -1,143 +1,206 @@
 {
-  "lastUpdated": "2026-02-19T10:25:20.956Z",
-  "matches": [
-    {
-      "id": "開始時刻",
-      "player1": "チーム1",
-      "player2": "チーム2",
-      "status": "finish"
-    },
-    {
-      "id": "1899-12-30T04:30:00.000Z",
-      "player1": "test1",
-      "player2": "test2",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T04:55:00.000Z",
-      "player1": "test3",
-      "player2": "test4",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T05:20:00.000Z",
-      "player1": "test5",
-      "player2": "test6",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T05:45:00.000Z",
-      "player1": "test7",
-      "player2": "test8",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T06:25:00.000Z",
-      "player1": "test1",
-      "player2": "test3",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T06:50:00.000Z",
-      "player1": "test2",
-      "player2": "test5",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T07:15:00.000Z",
-      "player1": "test4",
-      "player2": "test7",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T07:40:00.000Z",
-      "player1": "test6",
-      "player2": "test8",
-      "status": false
-    },
-    {
-      "id": "Soccer",
-      "player1": "2026-02-22T15:00:00.000Z",
-      "player2": "",
-      "status": ""
-    },
-    {
-      "id": "開始時刻",
-      "player1": "チーム1",
-      "player2": "チーム2",
-      "status": "finish"
-    },
-    {
-      "id": "1899-12-30T04:00:00.000Z",
-      "player1": "test1",
-      "player2": "test4",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T04:25:00.000Z",
-      "player1": "test2",
-      "player2": "test3",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T04:50:00.000Z",
-      "player1": "test5",
-      "player2": "test8",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T05:15:00.000Z",
-      "player1": "test6",
-      "player2": "test7",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T05:40:00.000Z",
-      "player1": "test1",
-      "player2": "test5",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T06:05:00.000Z",
-      "player1": "test2",
-      "player2": "test6",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T06:30:00.000Z",
-      "player1": "test3",
-      "player2": "test7",
-      "status": false
-    },
-    {
-      "id": "1899-12-30T06:55:00.000Z",
-      "player1": "test4",
-      "player2": "test8",
-      "status": false
-    },
-    {
-      "id": "",
-      "player1": "",
-      "player2": "",
-      "status": ""
-    },
-    {
-      "id": "",
-      "player1": "",
-      "player2": "",
-      "status": ""
-    },
-    {
-      "id": "",
-      "player1": "",
-      "player2": "",
-      "status": ""
-    },
-    {
-      "id": "",
-      "player1": "",
-      "player2": "",
-      "status": ""
-    }
-  ]
+  "date": "2026/02/22",
+  "update": "21:04",
+  "Soccer": {
+    "schedule": [
+      {
+        "time": "13:30",
+        "team1": "test1",
+        "team2": "test2",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      },
+      {
+        "time": "13:55",
+        "team1": "test3",
+        "team2": "test4",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      },
+      {
+        "time": "14:20",
+        "team1": "test5",
+        "team2": "test6",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      },
+      {
+        "time": "14:45",
+        "team1": "test7",
+        "team2": "test8",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      },
+      {
+        "time": "15:25",
+        "team1": "test1",
+        "team2": "test3",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      },
+      {
+        "time": "15:50",
+        "team1": "test2",
+        "team2": "test5",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      },
+      {
+        "time": "16:15",
+        "team1": "test4",
+        "team2": "test7",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      },
+      {
+        "time": "16:40",
+        "team1": "test6",
+        "team2": "test8",
+        "finish": false,
+        "score1": null,
+        "score2": null
+      }
+    ]
+  },
+  "rescue-maze": {
+    "schedule": [
+      {
+        "time": "14:10",
+        "team": "test1",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "14:30",
+        "team": "test2",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "14:45",
+        "team": "test3",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "15:00",
+        "team": "test4",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "15:25",
+        "team": "test1",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "15:50",
+        "team": "test2",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "16:05",
+        "team": "test3",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "16:20",
+        "team": "test4",
+        "run": 2,
+        "finish": false,
+        "score": null
+      }
+    ]
+  },
+  "rescue-line": {
+    "schedule": [
+      {
+        "time": "13:45",
+        "team": "test1",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "14:00",
+        "team": "test2",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "14:20",
+        "team": "test3",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "14:35",
+        "team": "test4",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "15:00",
+        "team": "test5",
+        "run": 1,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "15:15",
+        "team": "test1",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "15:40",
+        "team": "test2",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "15:55",
+        "team": "test3",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "16:15",
+        "team": "test4",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "16:30",
+        "team": "test5",
+        "run": 2,
+        "finish": false,
+        "score": null
+      }
+    ]
+  }
 }
