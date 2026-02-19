@@ -1,16 +1,16 @@
 {
-  "state": "mente",
+  "state": "open",
   "date": "2026/02/22",
-  "update": "23:35",
+  "update": "23:43",
   "Soccer": {
     "schedule": [
       {
         "time": "13:30",
         "team1": "test1",
         "team2": "test2",
-        "finish": true,
-        "score1": 3,
-        "score2": 10
+        "finish": false,
+        "score1": null,
+        "score2": null
       },
       {
         "time": "13:55",
@@ -67,6 +67,14 @@
         "finish": false,
         "score1": null,
         "score2": null
+      },
+      {
+        "time": "15:55",
+        "team1": "test4",
+        "team2": "test8",
+        "finish": false,
+        "score1": null,
+        "score2": null
       }
     ]
   },
@@ -76,8 +84,8 @@
         "time": "14:10",
         "team": "test1",
         "run": 1,
-        "finish": true,
-        "score": 200
+        "finish": false,
+        "score": null
       },
       {
         "time": "14:30",
@@ -120,13 +128,6 @@
         "run": 2,
         "finish": false,
         "score": null
-      },
-      {
-        "time": "16:20",
-        "team": "test4",
-        "run": 2,
-        "finish": false,
-        "score": null
       }
     ]
   },
@@ -136,8 +137,8 @@
         "time": "13:45",
         "team": "test1",
         "run": 1,
-        "finish": true,
-        "score": 100
+        "finish": false,
+        "score": null
       },
       {
         "time": "14:00",
@@ -198,6 +199,13 @@
       {
         "time": "16:30",
         "team": "test5",
+        "run": 2,
+        "finish": false,
+        "score": null
+      },
+      {
+        "time": "17:00",
+        "team": "test6",
         "run": 2,
         "finish": false,
         "score": null
