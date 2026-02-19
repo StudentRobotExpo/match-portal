@@ -389,3 +389,29 @@ img {
 		font-size: 0.85rem;
 	}
 }
+
+.state-message {
+	padding: 60px 20px;
+	text-align: center;
+	margin: 40px 0;
+}
+
+.state-message p {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin: 0;
+}
+
+.state-begin p {
+	color: var(--text);
+}
+
+.state-mente p {
+	color: #dc2626;
+}
+
+@media (max-width: 768px) {
+	.state-message p {
+		font-size: 1.2rem;
+	}
+}

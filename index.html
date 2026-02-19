@@ -34,6 +34,7 @@
 		</nav>
 
 		<section id="page-top" class="page-section page-active">
+			<div id="state-message-container"></div>
 			<section class="match-info-section">
 				<div class="container">
 					<div id="match-info-container" class="match-info-container">
@@ -103,12 +104,33 @@
 					const dateElement = document.getElementById('event-date');
 					dateElement.textContent = `日付: ${data.date} | 更新: ${data.update}`;
 					
-					displayAllMatchInfo(data);
+					handleStateDisplay(data);
 				})
 				.catch(error => {
 					console.error('データの読み込みに失敗しました:', error);
 					document.getElementById('event-date').textContent = '日付情報を読み込めませんでした';
 				});
+
+			function handleStateDisplay(data) {
+				const stateContainer = document.getElementById('state-message-container');
+				const matchInfoSection = document.querySelector('.match-info-section');
+				const aboutSection = document.getElementById('about');
+				
+				if (data.state === 'begin') {
+					stateContainer.innerHTML = '<div class="state-message state-begin"><div class="container"><p>イベント開始までしばらくお待ちください</p></div></div>';
+					matchInfoSection.style.display = 'none';
+					aboutSection.style.display = 'none';
+				} else if (data.state === 'mente') {
+					stateContainer.innerHTML = '<div class="state-message state-mente"><div class="container"><p>現在緊急メンテナンス中です</p></div></div>';
+					matchInfoSection.style.display = 'none';
+					aboutSection.style.display = 'none';
+				} else {
+					stateContainer.innerHTML = '';
+					matchInfoSection.style.display = 'block';
+					aboutSection.style.display = 'block';
+					displayAllMatchInfo(data);
+				}
+			}
 
 			function displayAllMatchInfo(data) {
 				const updateTime = data.update;
@@ -116,7 +138,7 @@
 				let html = '';
 
 				Object.keys(data).forEach(sport => {
-					if (sport === 'date' || sport === 'update') return;
+					if (sport === 'date' || sport === 'update' || sport === 'state') return;
 					
 					const schedule = data[sport].schedule;
 					const sportName = sportNames[sport] || sport;
@@ -159,7 +181,7 @@
 				let html = '';
 
 				Object.keys(data).forEach(sport => {
-					if (sport === 'date' || sport === 'update') return;
+					if (sport === 'date' || sport === 'update' || sport === 'state') return;
 					
 					const schedule = data[sport].schedule;
 					const sportName = sportNames[sport] || sport;
