@@ -35,8 +35,44 @@
 		</nav>
 
 		<section id="page-top" class="page-section page-active">
-			<div id="state-message-container"></div>
-			<section class="match-info-section">
+			<div id="state-message-container"></div>		
+		<!-- 会場マップ -->
+		<section class="venue-map-section">
+			<div class="container">
+				<div class="map-header-section">
+					<h2 class="map-title">MAP</h2>
+					<p class="map-description">気になるブースをタップして発表・試合情報を確認</p>
+				</div>
+				<div class="venue-map">
+					<div class="map-header" onclick="window.open('https://robot.exposition.tokyo/html/participants.html', '_blank')">
+						<div class="booth-label">チーム参加者ブース</div>
+					</div>
+					<div class="map-entrance-label">入口</div>
+					<div class="map-booths">
+					<div class="booth booth-large" data-sport="prezen" onclick="scrollToSport('prezen')">
+						<div class="booth-label">発表</div>
+						<div class="booth-badge" id="badge-prezen">0</div>
+						</div>
+						<div class="booth-grid">
+						<div class="booth booth-small" data-sport="Soccer" onclick="scrollToSport('Soccer')">
+							<div class="booth-label booth-label-small">サッカー</div>
+							<div class="booth-badge booth-badge-small" id="badge-Soccer">0</div>
+							</div>
+							<div></div>
+						<div class="booth booth-small" data-sport="rescue-line" onclick="scrollToSport('rescue-line')">
+							<div class="booth-label booth-label-small">レスキュー<br>ライン</div>
+							<div class="booth-badge booth-badge-small" id="badge-rescue-line">0</div>
+							</div>
+						<div class="booth booth-small" data-sport="rescue-maze" onclick="scrollToSport('rescue-maze')">
+							<div class="booth-label booth-label-small">レスキュー<br>メイズ</div>
+							<div class="booth-badge booth-badge-small" id="badge-rescue-maze">0</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+					<section class="match-info-section">
 				<div class="container">
 					<div id="match-info-container" class="match-info-container">
 						<div class="match-loading">試合情報を読み込み中...</div>
@@ -135,6 +171,7 @@
 					const dateElement = document.getElementById('event-date');
 					dateElement.textContent = `日付: ${data.date} | 更新: ${data.update}`;
 					
+					updateBadgeCounts(data);
 					handleStateDisplay(data);
 				})
 				.catch(error => {
@@ -197,7 +234,7 @@
 					});
 
 					if (nowMatch || nextMatch) {
-						html += `<div class="sport-section">
+						html += `<div class="sport-section" id="sport-${sport}">
 							<h3 class="sport-title">${sportName}</h3>
 							<div class="match-grid">`;
 						
@@ -244,7 +281,7 @@
 					return prezen.time > updateTime && !prezen.finish;
 				});
 				
-				html += `<div class="sport-section">
+				html += `<div class="sport-section" id="sport-prezen">
 					<h3 class="sport-title">フリープレゼン</h3>`;
 				
 				if (nowPrezen || nextPrezen) {
@@ -400,6 +437,75 @@
 					container.innerHTML = '<div class="no-match">本日の発表はありません</div>';
 				} else {
 					container.innerHTML = html;
+				}
+			}
+
+			function updateBadgeCounts(data) {
+				// 各競技の今日の試合数をカウント
+				const counts = {
+					'Soccer': 0,
+					'rescue-line': 0,
+					'rescue-maze': 0,
+					'prezen': 0
+				};
+
+				// 試合数をカウント
+				Object.keys(data).forEach(sport => {
+					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen') return;
+					if (data[sport] && data[sport].schedule) {
+						counts[sport] = data[sport].schedule.length;
+					}
+				});
+
+				// 発表数をカウント
+				if (data.prezen && data.prezen.schedule) {
+					counts['prezen'] = data.prezen.schedule.length;
+				}
+
+				// バッジを更新
+				Object.keys(counts).forEach(sport => {
+					const badge = document.getElementById(`badge-${sport}`);
+					if (badge) {
+						badge.textContent = counts[sport];
+					}
+				});
+			}
+
+			function scrollToSport(sport) {
+				// データが読み込まれていない場合は何もしない
+				if (!globalData) return;
+
+				// begin/menteの時は何もしない
+				if (globalData.state === 'begin' || globalData.state === 'mente') {
+					return;
+				}
+
+				// TOPページを表示
+				document.querySelectorAll('.page-section').forEach(el => {
+					el.classList.remove('page-active');
+				});
+				document.getElementById('page-top').classList.add('page-active');
+
+				document.querySelectorAll('.menu-item').forEach(el => {
+					el.classList.remove('active');
+				});
+				document.querySelector('a[href="#top"]').classList.add('active');
+
+				// 各競技セクションをIDで検索
+				const targetSection = document.getElementById(`sport-${sport}`);
+
+				if (targetSection) {
+					// 少し遅延してからスクロール（ページ切り替えアニメーション後）
+					setTimeout(() => {
+						const headerOffset = 100;
+						const elementPosition = targetSection.getBoundingClientRect().top;
+						const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+						window.scrollTo({
+							top: offsetPosition,
+							behavior: 'smooth'
+						});
+					}, 100);
 				}
 			}
 
