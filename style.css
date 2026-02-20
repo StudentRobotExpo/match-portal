@@ -441,3 +441,28 @@ img {
 		font-size: 1.2rem;
 	}
 }
+
+.prezen-info-section {
+	background: #f9f9f9;
+	padding: 40px 0;
+}
+
+.prezen-presenter {
+	font-weight: 700;
+	color: var(--green);
+	font-size: 1rem;
+	margin-bottom: 8px;
+}
+
+.prezen-title {
+	font-weight: 700;
+	color: var(--text);
+	font-size: 0.95rem;
+	margin-bottom: 6px;
+}
+
+.prezen-detail {
+	font-size: 0.9rem;
+	color: var(--muted);
+	line-height: 1.5;
+}

@@ -29,6 +29,7 @@
 				<ul class="menu">
 					<li><a href="#top" class="menu-item active" onclick="showPage('top'); return false;">TOP</a></li>
 					<li><a href="#schedule" class="menu-item" id="schedule-menu-item" onclick="showPage('schedule'); return false;">試合一覧</a></li>
+					<li><a href="#prezen" class="menu-item" id="prezen-menu-item" onclick="showPage('prezen'); return false;">発表一覧</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -39,6 +40,13 @@
 				<div class="container">
 					<div id="match-info-container" class="match-info-container">
 						<div class="match-loading">試合情報を読み込み中...</div>
+					</div>
+				</div>
+			</section>
+			<section class="prezen-info-section">
+				<div class="container">
+					<div id="prezen-info-container" class="prezen-info-container">
+						<div class="match-loading">発表情報を読み込み中...</div>
 					</div>
 				</div>
 			</section>
@@ -67,6 +75,18 @@
 			</div>
 		</section>
 
+		<section id="page-prezen" class="page-section">
+			<div id="prezen-state-message-container"></div>
+			<div class="schedule-container">
+				<div class="container">
+					<h2>発表一覧</h2>
+					<div id="prezen-content" class="schedule-content">
+						<div class="match-loading">発表情報を読み込み中...</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<footer class="site-footer">
 			<div class="container">
 				<p class="muted">&copy; 2026 学生ロボットEXPO</p>
@@ -77,7 +97,8 @@
 			const sportNames = {
 				'Soccer': 'サッカー',
 				'rescue-maze': 'レスキューメイズ',
-				'rescue-line': 'レスキューライン'
+				'rescue-line': 'レスキューライン',
+				'prezen': 'フリープレゼン'
 			};
 
 			let globalData = null;
@@ -85,8 +106,8 @@
 			function showPage(page) {
 				if (!globalData) return;
 				
-				// begin/menteの時は試合一覧ページに遷移させない
-				if (page === 'schedule' && (globalData.state === 'begin' || globalData.state === 'mente')) {
+				// begin/menteの時は試合一覧・発表一覧ページに遷移させない
+				if ((page === 'schedule' || page === 'prezen') && (globalData.state === 'begin' || globalData.state === 'mente')) {
 					return;
 				}
 				
@@ -102,6 +123,8 @@
 
 				if (page === 'schedule' && globalData) {
 					displaySchedulePage(globalData);
+				} else if (page === 'prezen' && globalData) {
+					displayPrezenPage(globalData);
 				}
 			}
 
@@ -122,25 +145,34 @@
 			function handleStateDisplay(data) {
 				const stateContainer = document.getElementById('state-message-container');
 				const matchInfoSection = document.querySelector('.match-info-section');
+				const prezenInfoSection = document.querySelector('.prezen-info-section');
 				const aboutSection = document.getElementById('about');
 				const scheduleMenuItem = document.getElementById('schedule-menu-item');
+				const prezenMenuItem = document.getElementById('prezen-menu-item');
 				
 				if (data.state === 'begin') {
 					stateContainer.innerHTML = '<div class="state-message state-begin"><div class="container"><p>イベント開始までしばらくお待ちください</p></div></div>';
 					matchInfoSection.style.display = 'none';
+					prezenInfoSection.style.display = 'none';
 					aboutSection.style.display = 'none';
 					scheduleMenuItem.classList.add('disabled');
+					prezenMenuItem.classList.add('disabled');
 				} else if (data.state === 'mente') {
 					stateContainer.innerHTML = '<div class="state-message state-mente"><div class="container"><p>現在緊急メンテナンス中です</p></div></div>';
 					matchInfoSection.style.display = 'none';
+					prezenInfoSection.style.display = 'none';
 					aboutSection.style.display = 'none';
 					scheduleMenuItem.classList.add('disabled');
+					prezenMenuItem.classList.add('disabled');
 				} else {
 					stateContainer.innerHTML = '';
 					matchInfoSection.style.display = 'block';
+					prezenInfoSection.style.display = 'block';
 					aboutSection.style.display = 'block';
 					scheduleMenuItem.classList.remove('disabled');
+					prezenMenuItem.classList.remove('disabled');
 					displayAllMatchInfo(data);
+					displayAllPrezenInfo(data);
 				}
 			}
 
@@ -150,7 +182,7 @@
 				let html = '';
 
 				Object.keys(data).forEach(sport => {
-					if (sport === 'date' || sport === 'update' || sport === 'state') return;
+					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen') return;
 					
 					const schedule = data[sport].schedule;
 					const sportName = sportNames[sport] || sport;
@@ -188,12 +220,75 @@
 				}
 			}
 
+			function displayAllPrezenInfo(data) {
+				const updateTime = data.update;
+				const container = document.getElementById('prezen-info-container');
+				
+				if (!data.prezen) {
+					container.innerHTML = '<div class="no-match">本日の発表はありません</div>';
+					return;
+				}
+				
+				const schedule = data.prezen.schedule;
+				let html = '';
+				
+				const nowPrezens = schedule.filter(prezen => {
+					return prezen.time <= updateTime && !prezen.finish;
+				});
+				const nowPrezen = nowPrezens[nowPrezens.length - 1];
+				
+				const nextPrezen = schedule.find(prezen => {
+					return prezen.time > updateTime && !prezen.finish;
+				});
+				
+				if (nowPrezen || nextPrezen) {
+					html += `<div class="sport-section">
+						<h3 class="sport-title">フリープレゼン</h3>
+						<div class="match-grid">`;
+					
+					if (nowPrezen) {
+						html += generatePrezenCard('Now', nowPrezen);
+					}
+					
+					if (nextPrezen) {
+						html += generatePrezenCard('Next', nextPrezen);
+					}
+					
+					html += `</div></div>`;
+				} else {
+					html = '<div class="no-match">本日の発表はありません</div>';
+				}
+				
+				container.innerHTML = html;
+			}
+
+			function generatePrezenCard(label, prezen) {
+				const isNow = label === 'Now';
+				const cardClass = isNow ? 'match-card match-card-now' : 'match-card';
+				const labelClass = isNow ? 'match-label match-label-now' : 'match-label';
+				let prezenHtml = `
+					<div class="${cardClass}">
+						<h3 class="match-title">
+							<span class="${labelClass}">${label}</span>
+						</h3>
+						<div class="match-content">
+							<div class="match-time">${prezen.time}</div>
+							<div class="prezen-presenter">${prezen.name}</div>
+							<div class="prezen-title">${prezen.title}</div>
+							<div class="prezen-detail">${prezen.detail}</div>
+						</div>
+					</div>
+				`;
+				
+				return prezenHtml;
+			}
+
 			function displaySchedulePage(data) {
 				const container = document.getElementById('schedule-content');
 				let html = '';
 
 				Object.keys(data).forEach(sport => {
-					if (sport === 'date' || sport === 'update' || sport === 'state') return;
+					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen') return;
 					
 					const schedule = data[sport].schedule;
 					const sportName = sportNames[sport] || sport;
@@ -249,6 +344,57 @@
 				});
 
 				container.innerHTML = html;
+			}
+
+			function displayPrezenPage(data) {
+				const container = document.getElementById('prezen-content');
+				
+				if (!data.prezen) {
+					container.innerHTML = '<div class="no-match">本日の発表はありません</div>';
+					return;
+				}
+				
+				const schedule = data.prezen.schedule;
+				const sortedSchedule = [...schedule].sort((a, b) => {
+					return a.time.localeCompare(b.time);
+				});
+				
+				let html = `<div class="sport-schedule-section">
+					<h3 class="sport-schedule-title">フリープレゼン</h3>
+					<table class="schedule-table">
+						<thead>
+							<tr>
+								<th>時間</th>
+								<th>発表者</th>
+								<th>タイトル</th>
+								<th>概要</th>
+								<th>状態</th>
+							</tr>
+						</thead>
+						<tbody>`;
+				
+				sortedSchedule.forEach(prezen => {
+					const status = prezen.finish ? '終了' : '予定';
+					html += `
+						<tr${prezen.finish ? ' class="finished"' : ''}>
+							<td class="time">${prezen.time}</td>
+							<td>${prezen.name}</td>
+							<td>${prezen.title}</td>
+							<td>${prezen.detail}</td>
+							<td>${status}</td>
+						</tr>
+					`;
+				});
+				
+				html += `</tbody>
+					</table>
+				</div>`;
+				
+				if (sortedSchedule.length === 0) {
+					container.innerHTML = '<div class="no-match">本日の発表はありません</div>';
+				} else {
+					container.innerHTML = html;
+				}
 			}
 
 			function generateMatchCard(label, match, sport) {
