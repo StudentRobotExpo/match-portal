@@ -225,7 +225,10 @@
 				const container = document.getElementById('prezen-info-container');
 				
 				if (!data.prezen) {
-					container.innerHTML = '<div class="no-match">本日の発表はありません</div>';
+					container.innerHTML = `<div class="sport-section">
+						<h3 class="sport-title">フリープレゼン</h3>
+						<div class="no-match">本日の発表はありません</div>
+					</div>`;
 					return;
 				}
 				
@@ -241,10 +244,11 @@
 					return prezen.time > updateTime && !prezen.finish;
 				});
 				
+				html += `<div class="sport-section">
+					<h3 class="sport-title">フリープレゼン</h3>`;
+				
 				if (nowPrezen || nextPrezen) {
-					html += `<div class="sport-section">
-						<h3 class="sport-title">フリープレゼン</h3>
-						<div class="match-grid">`;
+					html += `<div class="match-grid">`;
 					
 					if (nowPrezen) {
 						html += generatePrezenCard('Now', nowPrezen);
@@ -254,10 +258,12 @@
 						html += generatePrezenCard('Next', nextPrezen);
 					}
 					
-					html += `</div></div>`;
+					html += `</div>`;
 				} else {
-					html = '<div class="no-match">本日の発表はありません</div>';
+					html += `<div class="no-match">本日の発表はありません</div>`;
 				}
+				
+				html += `</div>`;
 				
 				container.innerHTML = html;
 			}
