@@ -1,7 +1,7 @@
 {
   "state": "begin",
   "date": "2026/02/22",
-  "update": "00:24",
+  "update": "07:40",
   "soccer": {
     "schedule": [
       {
@@ -74,56 +74,42 @@
     "schedule": [
       {
         "time": "14:10",
-        "team": "test1",
+        "team": "Tuton",
         "run": 1,
         "finish": false,
         "score": null
       },
       {
         "time": "14:30",
-        "team": "test2",
-        "run": 1,
-        "finish": false,
-        "score": null
-      },
-      {
-        "time": "14:45",
-        "team": "test3",
+        "team": "Creator",
         "run": 1,
         "finish": false,
         "score": null
       },
       {
         "time": "15:00",
-        "team": "test4",
+        "team": "鳩サブレ愛護団",
         "run": 1,
         "finish": false,
         "score": null
       },
       {
         "time": "15:25",
-        "team": "test1",
+        "team": "Tuton",
         "run": 2,
         "finish": false,
         "score": null
       },
       {
         "time": "15:50",
-        "team": "test2",
-        "run": 2,
-        "finish": false,
-        "score": null
-      },
-      {
-        "time": "16:05",
-        "team": "test3",
+        "team": "Creator",
         "run": 2,
         "finish": false,
         "score": null
       },
       {
         "time": "16:20",
-        "team": "test4",
+        "team": "鳩サブレ愛護団",
         "run": 2,
         "finish": false,
         "score": null
