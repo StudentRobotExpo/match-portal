@@ -54,9 +54,9 @@
 						<div class="booth-badge" id="badge-prezen">0</div>
 						</div>
 						<div class="booth-grid">
-						<div class="booth booth-small" data-sport="Soccer" onclick="scrollToSport('Soccer')">
+						<div class="booth booth-small" data-sport="soccer" onclick="scrollToSport('soccer')">
 							<div class="booth-label booth-label-small">サッカー</div>
-							<div class="booth-badge booth-badge-small" id="badge-Soccer">0</div>
+							<div class="booth-badge booth-badge-small" id="badge-soccer">0</div>
 							</div>
 							<div></div>
 						<div class="booth booth-small" data-sport="rescue-line" onclick="scrollToSport('rescue-line')">
@@ -131,7 +131,7 @@
 
 		<script>
 			const sportNames = {
-				'Soccer': 'サッカー',
+				'soccer': 'サッカー',
 				'rescue-maze': 'レスキューメイズ',
 				'rescue-line': 'レスキューライン',
 				'prezen': 'フリープレゼン'
@@ -357,7 +357,7 @@
 						let matchInfo = '';
 						let status = '';
 
-						if (sport === 'Soccer') {
+						if (sport === 'soccer') {
 							matchInfo = `${match.team1} <span class="vs">vs</span> ${match.team2}`;
 							if (match.finish && match.score1 !== null && match.score2 !== null) {
 								status = `<span class="result">${match.score1} - ${match.score2}</span>`;
@@ -445,7 +445,7 @@
 			function updateBadgeCounts(data) {
 				// 各競技の今日の試合数をカウント
 				const counts = {
-					'Soccer': 0,
+					'soccer': 0,
 					'rescue-line': 0,
 					'rescue-maze': 0,
 					'prezen': 0
@@ -524,7 +524,7 @@
 							<div class="match-time">${match.time}</div>
 				`;
 
-				if (sport === 'Soccer') {
+				if (sport === 'soccer') {
 					matchHtml += `
 						<div class="match-teams">
 							<div class="team">${match.team1}</div>
