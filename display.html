@@ -188,10 +188,11 @@
                     if (next) {
                         const teamInfo = key === 'soccer' ? `${next.team1} vs ${next.team2}` : (key === 'prezen' ? next.name : `${next.team} (Run ${next.run})`);
                         const prezenTitle = (key === 'prezen' && next.title) ? `<div class="prezen-title-next">${next.title}</div>` : '';
+                        const timeDisplay = (key === 'prezen' && next.ftime) ? `${next.time} - ${next.ftime}` : next.time;
                         nextHtml += `<div class="match-card">
                             <div class="sport-label">${CONFIG.sportDisplayNames[key]}</div>
                             <div class="next-label">NEXT</div>
-                            <div class="match-time">${next.time}</div>
+                            <div class="match-time">${timeDisplay}</div>
                             <div class="match-teams">${teamInfo}</div>
                             ${prezenTitle}
                         </div>`;
@@ -207,17 +208,20 @@
             const statusCls = m.finish ? 'status-finished' : (isOngoing ? 'status-ongoing' : 'status-upcoming');
             
             let info = "";
+            let timeDisplay = m.time;
+            
             if (key === 'soccer') {
                 info = `${m.team1} vs ${m.team2}`;
                 if (m.finish && m.score1 !== undefined) info += ` (${m.score1}-${m.score2})`;
             } else if (key === 'prezen') {
                 info = `${m.name} / ${m.title}`;
+                if (m.ftime) timeDisplay = `${m.time} - ${m.ftime}`;
             } else {
                 info = `${m.team} (Run ${m.run})`;
             }
             
             return `<div class="schedule-item">
-                <div class="schedule-item-time">${m.time}</div>
+                <div class="schedule-item-time">${timeDisplay}</div>
                 <div class="schedule-item-content">${info}</div>
                 <div class="schedule-item-status ${statusCls}">${statusStr}</div>
             </div>`;

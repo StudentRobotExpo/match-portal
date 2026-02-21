@@ -309,13 +309,14 @@
 				const isNow = label === 'Now';
 				const cardClass = isNow ? 'match-card match-card-now' : 'match-card';
 				const labelClass = isNow ? 'match-label match-label-now' : 'match-label';
+				const timeDisplay = prezen.ftime ? `${prezen.time} - ${prezen.ftime}` : prezen.time;
 				let prezenHtml = `
 					<div class="${cardClass}">
 						<h3 class="match-title">
 							<span class="${labelClass}">${label}</span>
 						</h3>
 						<div class="match-content">
-							<div class="match-time">${prezen.time}</div>
+							<div class="match-time">${timeDisplay}</div>
 							<div class="prezen-presenter">${prezen.name}</div>
 							<div class="prezen-title">${prezen.title}</div>
 							<div class="prezen-detail">${prezen.detail}</div>
@@ -418,9 +419,10 @@
 				
 				sortedSchedule.forEach(prezen => {
 					const status = prezen.finish ? '終了' : '予定';
+					const timeDisplay = prezen.ftime ? `${prezen.time} - ${prezen.ftime}` : prezen.time;
 					html += `
 						<tr${prezen.finish ? ' class="finished"' : ''}>
-							<td class="time">${prezen.time}</td>
+							<td class="time">${timeDisplay}</td>
 							<td>${prezen.name}</td>
 							<td>${prezen.title}</td>
 							<td>${prezen.detail}</td>
