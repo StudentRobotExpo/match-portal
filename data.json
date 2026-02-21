@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "18:50",
+  "update": "18:51",
   "soccer": {
     "schedule": [
       {
@@ -220,7 +220,7 @@
         "time": "13:20",
         "ftime": "13:35",
         "name": "松戸ロボティクス",
-        "finish": false,
+        "finish": true,
         "title": "松戸ロボティクスの紹介",
         "detail": "松戸ロボティクスのロボット•活動紹介　来年度開催する技術イベントMatsudo Tech Labの紹介"
       },
