@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/22",
-  "update": "13:53",
+  "update": "13:59",
   "soccer": {
     "schedule": [
       {
@@ -119,29 +119,22 @@
   "rescue-line": {
     "schedule": [
       {
-        "time": "13:45",
+        "time": "14:00",
         "team": "A.Z.K.",
         "run": 1,
         "finish": false,
         "score": null
       },
       {
-        "time": "14:00",
+        "time": "14:15",
         "team": "けいんず",
         "run": 1,
         "finish": false,
         "score": null
       },
       {
-        "time": "14:20",
-        "team": "おしゃんてぃ",
-        "run": 1,
-        "finish": false,
-        "score": null
-      },
-      {
         "time": "14:35",
-        "team": "BoeingDGK",
+        "team": "おしゃんてぃ",
         "run": 1,
         "finish": false,
         "score": null
@@ -163,13 +156,6 @@
       {
         "time": "15:55",
         "team": "おしゃんてぃ",
-        "run": 2,
-        "finish": false,
-        "score": null
-      },
-      {
-        "time": "16:15",
-        "team": "BoeingDGK",
         "run": 2,
         "finish": false,
         "score": null
