@@ -8,9 +8,9 @@
         "time": "13:30",
         "team1": "Gcraud Shuffle",
         "team2": "AIR",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 1,
+        "score2": 4
       },
       {
         "time": "13:55",
