@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/22",
-  "update": "15:43",
+  "update": "15:44",
   "soccer": {
     "schedule": [
       {
@@ -40,9 +40,9 @@
         "time": "15:25",
         "team1": "Gcraud Shuffle",
         "team2": "VEGA",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 2,
+        "score2": 4
       },
       {
         "time": "15:50",
