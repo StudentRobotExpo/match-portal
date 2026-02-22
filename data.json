@@ -32,9 +32,9 @@
         "time": "14:45",
         "team1": "Thrcot",
         "team2": "URAWA BEOLSAE",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 5,
+        "score2": 0
       },
       {
         "time": "15:25",
