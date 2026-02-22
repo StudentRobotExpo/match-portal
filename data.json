@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/22",
-  "update": "16:15",
+  "update": "16:16",
   "soccer": {
     "schedule": [
       {
@@ -144,7 +144,7 @@
         "team": "A.Z.K.",
         "run": 2,
         "finish": true,
-        "score": null
+        "score": 75
       },
       {
         "time": "15:40",
@@ -158,7 +158,7 @@
         "team": "おしゃんてぃ",
         "run": 2,
         "finish": true,
-        "score": null
+        "score": 220
       }
     ]
   },
