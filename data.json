@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/22",
-  "update": "16:22",
+  "update": "16:23",
   "soccer": {
     "schedule": [
       {
@@ -56,9 +56,9 @@
         "time": "16:15",
         "team1": "つちのこキッカーズ",
         "team2": "URAWA BEOLSAE",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 5,
+        "score2": 0
       },
       {
         "time": "16:40",
