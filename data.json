@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "03:25",
+  "update": "04:31",
   "soccer": {
     "schedule": [
       {
@@ -287,10 +287,10 @@
   "freerobot": {
     "schedule": [
       {
-        "time": "14:00",
-        "ftime": "14:30",
-        "team": "test",
-        "detail": "動かします",
+        "time": "13:00",
+        "ftime": "14:00",
+        "team": "-",
+        "detail": "自由開放",
         "finish": false
       }
     ]
