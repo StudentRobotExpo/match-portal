@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/22",
-  "update": "16:58",
+  "update": "16:59",
   "soccer": {
     "schedule": [
       {
@@ -64,9 +64,9 @@
         "time": "16:40",
         "team1": "ICT_Laboratory",
         "team2": "Thrcot",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 8,
+        "score2": 0
       }
     ]
   },
