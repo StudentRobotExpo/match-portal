@@ -24,9 +24,9 @@
         "time": "14:20",
         "team1": "つちのこキッカーズ",
         "team2": "ICT_Laboratory",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 8,
+        "score2": 1
       },
       {
         "time": "14:45",
