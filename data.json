@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/22",
-  "update": "16:14",
+  "update": "16:15",
   "soccer": {
     "schedule": [
       {
@@ -122,42 +122,42 @@
         "time": "14:00",
         "team": "A.Z.K.",
         "run": 1,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 90
       },
       {
         "time": "14:15",
         "team": "けいんず",
         "run": 1,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 0
       },
       {
         "time": "14:35",
         "team": "おしゃんてぃ",
         "run": 1,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 260
       },
       {
         "time": "15:15",
         "team": "A.Z.K.",
         "run": 2,
-        "finish": false,
+        "finish": true,
         "score": null
       },
       {
         "time": "15:40",
         "team": "けいんず",
         "run": 2,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 0
       },
       {
         "time": "15:55",
         "team": "おしゃんてぃ",
         "run": 2,
-        "finish": false,
+        "finish": true,
         "score": null
       }
     ]
