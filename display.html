@@ -105,6 +105,7 @@
             <div class="screen" id="screen-rescue-line"><div class="schedule-items" id="rescue-line-schedule"></div></div>
             <div class="screen" id="screen-rescue-maze"><div class="schedule-items" id="rescue-maze-schedule"></div></div>
             <div class="screen" id="screen-prezen"><div class="schedule-items" id="prezen-schedule"></div></div>
+            <div class="screen" id="screen-freerobot"><div class="schedule-items" id="freerobot-schedule"></div></div>
         </div>
     </div>
 
@@ -112,10 +113,10 @@
         const CONFIG = {
             duration: 8000,
             dataUrl: './data.json',
-            sportKeys: ['soccer', 'rescue-line', 'rescue-maze', 'prezen'],
-            sportDisplayNames: { 'soccer': 'サッカー', 'rescue-maze': 'レスキューメイズ', 'rescue-line': 'レスキューライン', 'prezen': 'プレゼン' },
-            screenTitles: { 'screen-next': '次の試合・発表', 'screen-soccer': 'サッカー 試合一覧', 'screen-rescue-line': 'レスキューライン 試合一覧', 'screen-rescue-maze': 'レスキューメイズ 試合一覧', 'screen-prezen': '発表一覧' },
-            screens: ['screen-next', 'screen-soccer', 'screen-rescue-line', 'screen-rescue-maze', 'screen-prezen']
+            sportKeys: ['soccer', 'rescue-line', 'rescue-maze', 'prezen', 'freerobot'],
+            sportDisplayNames: { 'soccer': 'サッカー', 'rescue-maze': 'レスキューメイズ', 'rescue-line': 'レスキューライン', 'prezen': 'プレゼン', 'freerobot': 'なんでもロボットブース' },
+            screenTitles: { 'screen-next': '次の試合・発表', 'screen-soccer': 'サッカー 試合一覧', 'screen-rescue-line': 'レスキューライン 試合一覧', 'screen-rescue-maze': 'レスキューメイズ 試合一覧', 'screen-prezen': '発表一覧', 'screen-freerobot': 'なんでもロボットブース 一覧' },
+            screens: ['screen-next', 'screen-soccer', 'screen-rescue-line', 'screen-rescue-maze', 'screen-prezen', 'screen-freerobot']
         };
 
         let state = { step: 0, data: null };
@@ -182,14 +183,30 @@
             const now = state.data.update || "00:00";
 
             let nextHtml = '';
-            CONFIG.sportKeys.forEach(key => {
+            const displayKeys = CONFIG.sportKeys.filter(key => key !== 'freerobot');
+            displayKeys.forEach(key => {
                 const sportData = state.data[key];
                 if (sportData && sportData.schedule) {
                     const next = sportData.schedule.find(m => m.time > now && !m.finish);
                     if (next) {
-                        const teamInfo = key === 'soccer' ? `${next.team1} vs ${next.team2}` : (key === 'prezen' ? next.name : `${next.team} (Run ${next.run})`);
-                        const prezenTitle = (key === 'prezen' && next.title) ? `<div class="prezen-title-next">${next.title}</div>` : '';
-                        const timeDisplay = (key === 'prezen' && next.ftime) ? `${next.time} - ${next.ftime}` : next.time;
+                        let teamInfo = '';
+                        let timeDisplay = next.time;
+                        let prezenTitle = '';
+                        
+                        if (key === 'soccer') {
+                            teamInfo = `${next.team1} vs ${next.team2}`;
+                        } else if (key === 'prezen') {
+                            teamInfo = next.name;
+                            if (next.ftime) timeDisplay = `${next.time} - ${next.ftime}`;
+                            prezenTitle = (next.title) ? `<div class="prezen-title-next">${next.title}</div>` : '';
+                        } else if (key === 'freerobot') {
+                            teamInfo = next.team;
+                            if (next.ftime) timeDisplay = `${next.time} - ${next.ftime}`;
+                            prezenTitle = (next.detail) ? `<div class="prezen-title-next">${next.detail}</div>` : '';
+                        } else {
+                            teamInfo = `${next.team} (Run ${next.run})`;
+                        }
+                        
                         nextHtml += `<div class="match-card">
                             <div class="sport-label">${CONFIG.sportDisplayNames[key]}</div>
                             <div class="next-label">NEXT</div>
@@ -216,6 +233,9 @@
                 if (m.finish && m.score1 !== undefined) info += ` (${m.score1}-${m.score2})`;
             } else if (key === 'prezen') {
                 info = `${m.name} / ${m.title}`;
+                if (m.ftime) timeDisplay = `${m.time} - ${m.ftime}`;
+            } else if (key === 'freerobot') {
+                info = `${m.team} / ${m.detail}`;
                 if (m.ftime) timeDisplay = `${m.time} - ${m.ftime}`;
             } else {
                 info = `${m.team} (Run ${m.run})`;

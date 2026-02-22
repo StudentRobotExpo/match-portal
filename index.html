@@ -58,7 +58,6 @@
 							<div class="booth-label booth-label-small">サッカー</div>
 							<div class="booth-badge booth-badge-small" id="badge-soccer">0</div>
 							</div>
-							<div></div>
 						<div class="booth booth-small" data-sport="rescue-line" onclick="scrollToSport('rescue-line')">
 							<div class="booth-label booth-label-small">レスキュー<br>ライン</div>
 							<div class="booth-badge booth-badge-small" id="badge-rescue-line">0</div>
@@ -66,6 +65,10 @@
 						<div class="booth booth-small" data-sport="rescue-maze" onclick="scrollToSport('rescue-maze')">
 							<div class="booth-label booth-label-small">レスキュー<br>メイズ</div>
 							<div class="booth-badge booth-badge-small" id="badge-rescue-maze">0</div>
+							</div>
+						<div class="booth booth-small" data-sport="freerobot" onclick="scrollToSport('freerobot')">
+							<div class="booth-label booth-label-small">なんでも<br>ロボット</div>
+							<div class="booth-badge booth-badge-small" id="badge-freerobot">0</div>
 							</div>
 						</div>
 					</div>
@@ -79,6 +82,7 @@
 					</div>
 				</div>
 			</section>
+
 			<section class="prezen-info-section">
 				<div class="container">
 					<div id="prezen-info-container" class="prezen-info-container">
@@ -219,7 +223,7 @@
 				let html = '';
 
 				Object.keys(data).forEach(sport => {
-					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen') return;
+					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen' || sport === 'freerobot') return;
 					
 					const schedule = data[sport].schedule;
 					const sportName = sportNames[sport] || sport;
@@ -260,47 +264,82 @@
 			function displayAllPrezenInfo(data) {
 				const updateTime = data.update;
 				const container = document.getElementById('prezen-info-container');
+				let html = '';
 				
+				// フリープレゼンセクション
 				if (!data.prezen) {
-					container.innerHTML = `<div class="sport-section">
+					html += `<div class="sport-section">
 						<h3 class="sport-title">フリープレゼン</h3>
 						<div class="no-match">本日の発表はありません</div>
 					</div>`;
-					return;
-				}
-				
-				const schedule = data.prezen.schedule;
-				let html = '';
-				
-				const nowPrezens = schedule.filter(prezen => {
-					return prezen.time <= updateTime && !prezen.finish;
-				});
-				const nowPrezen = nowPrezens[nowPrezens.length - 1];
-				
-				const nextPrezen = schedule.find(prezen => {
-					return prezen.time > updateTime && !prezen.finish;
-				});
-				
-				html += `<div class="sport-section" id="sport-prezen">
-					<h3 class="sport-title">フリープレゼン</h3>`;
-				
-				if (nowPrezen || nextPrezen) {
-					html += `<div class="match-grid">`;
+				} else {
+					const schedule = data.prezen.schedule;
 					
-					if (nowPrezen) {
-						html += generatePrezenCard('Now', nowPrezen);
-					}
+					const nowPrezens = schedule.filter(prezen => {
+						return prezen.time <= updateTime && !prezen.finish;
+					});
+					const nowPrezen = nowPrezens[nowPrezens.length - 1];
 					
-					if (nextPrezen) {
-						html += generatePrezenCard('Next', nextPrezen);
+					const nextPrezen = schedule.find(prezen => {
+						return prezen.time > updateTime && !prezen.finish;
+					});
+					
+					html += `<div class="sport-section" id="sport-prezen">
+						<h3 class="sport-title">フリープレゼン</h3>`;
+					
+					if (nowPrezen || nextPrezen) {
+						html += `<div class="match-grid">`;
+						
+						if (nowPrezen) {
+							html += generatePrezenCard('Now', nowPrezen);
+						}
+						
+						if (nextPrezen) {
+							html += generatePrezenCard('Next', nextPrezen);
+						}
+						
+						html += `</div>`;
+					} else {
+						html += `<div class="no-match">本日の発表はありません</div>`;
 					}
 					
 					html += `</div>`;
-				} else {
-					html += `<div class="no-match">本日の発表はありません</div>`;
 				}
 				
-				html += `</div>`;
+				// なんでもロボットブースセクション
+				if (data.freerobot) {
+					const schedule = data.freerobot.schedule;
+					
+					const nowRobots = schedule.filter(robot => {
+						return robot.time <= updateTime && !robot.finish;
+					});
+					const nowRobot = nowRobots[nowRobots.length - 1];
+					
+					const nextRobot = schedule.find(robot => {
+						return robot.time > updateTime && !robot.finish;
+					});
+					
+					html += `<div class="sport-section" id="sport-freerobot">
+						<h3 class="sport-title">なんでもロボットブース</h3>`;
+					
+					if (nowRobot || nextRobot) {
+						html += `<div class="match-grid">`;
+						
+						if (nowRobot) {
+							html += generateFreerobotCard('Now', nowRobot);
+						}
+						
+						if (nextRobot) {
+							html += generateFreerobotCard('Next', nextRobot);
+						}
+						
+						html += `</div>`;
+					} else {
+						html += `<div class="no-match">本日の予定はありません</div>`;
+					}
+					
+					html += `</div>`;
+				}
 				
 				container.innerHTML = html;
 			}
@@ -327,12 +366,33 @@
 				return prezenHtml;
 			}
 
+			function generateFreerobotCard(label, robot) {
+				const isNow = label === 'Now';
+				const cardClass = isNow ? 'match-card match-card-now' : 'match-card';
+				const labelClass = isNow ? 'match-label match-label-now' : 'match-label';
+				const timeDisplay = robot.ftime ? `${robot.time} - ${robot.ftime}` : robot.time;
+				let robotHtml = `
+					<div class="${cardClass}">
+						<h3 class="match-title">
+							<span class="${labelClass}">${label}</span>
+						</h3>
+						<div class="match-content">
+							<div class="match-time">${timeDisplay}</div>
+							<div class="freerobot-team">${robot.team}</div>
+							<div class="freerobot-detail">${robot.detail}</div>
+						</div>
+					</div>
+				`;
+				
+				return robotHtml;
+			}
+
 			function displaySchedulePage(data) {
 				const container = document.getElementById('schedule-content');
 				let html = '';
 
 				Object.keys(data).forEach(sport => {
-					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen') return;
+					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen' || sport === 'freerobot') return;
 					
 					const schedule = data[sport].schedule;
 					const sportName = sportNames[sport] || sport;
@@ -392,51 +452,92 @@
 
 			function displayPrezenPage(data) {
 				const container = document.getElementById('prezen-content');
+				let html = '';
 				
+				// フリープレゼンセクション
 				if (!data.prezen) {
-					container.innerHTML = '<div class="no-match">本日の発表はありません</div>';
-					return;
+					html += '<div class="no-match">本日の発表はありません</div>';
+				} else {
+					const schedule = data.prezen.schedule;
+					const sortedSchedule = [...schedule].sort((a, b) => {
+						return a.time.localeCompare(b.time);
+					});
+					
+					html += `<div class="sport-schedule-section">
+						<h3 class="sport-schedule-title">フリープレゼン</h3>
+						<table class="schedule-table">
+							<thead>
+								<tr>
+									<th>時間</th>
+									<th>発表者</th>
+									<th>タイトル</th>
+									<th>概要</th>
+									<th>状態</th>
+								</tr>
+							</thead>
+							<tbody>`;
+					
+					sortedSchedule.forEach(prezen => {
+						const status = prezen.finish ? '終了' : '予定';
+						const timeDisplay = prezen.ftime ? `${prezen.time} - ${prezen.ftime}` : prezen.time;
+						html += `
+							<tr${prezen.finish ? ' class="finished"' : ''}>
+								<td class="time">${timeDisplay}</td>
+								<td>${prezen.name}</td>
+								<td>${prezen.title}</td>
+								<td>${prezen.detail}</td>
+								<td>${status}</td>
+							</tr>
+						`;
+					});
+					
+					html += `</tbody>
+						</table>
+					</div>`;
 				}
 				
-				const schedule = data.prezen.schedule;
-				const sortedSchedule = [...schedule].sort((a, b) => {
-					return a.time.localeCompare(b.time);
-				});
+				// なんでもロボットブースセクション
+				if (data.freerobot) {
+					const schedule = data.freerobot.schedule;
+					const sortedSchedule = [...schedule].sort((a, b) => {
+						return a.time.localeCompare(b.time);
+					});
+					
+					if (sortedSchedule.length > 0) {
+						html += `<div class="sport-schedule-section">
+							<h3 class="sport-schedule-title">なんでもロボットブース</h3>
+							<table class="schedule-table">
+								<thead>
+									<tr>
+										<th>時間</th>
+										<th>チーム名</th>
+										<th>内容</th>
+										<th>状態</th>
+									</tr>
+								</thead>
+								<tbody>`;
+						
+						sortedSchedule.forEach(robot => {
+							const status = robot.finish ? '終了' : '予定';
+							const timeDisplay = robot.ftime ? `${robot.time} - ${robot.ftime}` : robot.time;
+							html += `
+								<tr${robot.finish ? ' class="finished"' : ''}>
+									<td class="time">${timeDisplay}</td>
+									<td>${robot.team}</td>
+									<td>${robot.detail}</td>
+									<td>${status}</td>
+								</tr>
+							`;
+						});
+						
+						html += `</tbody>
+							</table>
+						</div>`;
+					}
+				}
 				
-				let html = `<div class="sport-schedule-section">
-					<h3 class="sport-schedule-title">フリープレゼン</h3>
-					<table class="schedule-table">
-						<thead>
-							<tr>
-								<th>時間</th>
-								<th>発表者</th>
-								<th>タイトル</th>
-								<th>概要</th>
-								<th>状態</th>
-							</tr>
-						</thead>
-						<tbody>`;
-				
-				sortedSchedule.forEach(prezen => {
-					const status = prezen.finish ? '終了' : '予定';
-					const timeDisplay = prezen.ftime ? `${prezen.time} - ${prezen.ftime}` : prezen.time;
-					html += `
-						<tr${prezen.finish ? ' class="finished"' : ''}>
-							<td class="time">${timeDisplay}</td>
-							<td>${prezen.name}</td>
-							<td>${prezen.title}</td>
-							<td>${prezen.detail}</td>
-							<td>${status}</td>
-						</tr>
-					`;
-				});
-				
-				html += `</tbody>
-					</table>
-				</div>`;
-				
-				if (sortedSchedule.length === 0) {
-					container.innerHTML = '<div class="no-match">本日の発表はありません</div>';
+				if (html === '') {
+					container.innerHTML = '<div class="no-match">本日の予定はありません</div>';
 				} else {
 					container.innerHTML = html;
 				}
@@ -448,12 +549,13 @@
 					'soccer': 0,
 					'rescue-line': 0,
 					'rescue-maze': 0,
-					'prezen': 0
+					'prezen': 0,
+					'freerobot': 0
 				};
 
 				// 試合数をカウント
 				Object.keys(data).forEach(sport => {
-					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen') return;
+					if (sport === 'date' || sport === 'update' || sport === 'state' || sport === 'prezen' || sport === 'freerobot') return;
 					if (data[sport] && data[sport].schedule) {
 						counts[sport] = data[sport].schedule.length;
 					}
@@ -462,6 +564,11 @@
 				// 発表数をカウント
 				if (data.prezen && data.prezen.schedule) {
 					counts['prezen'] = data.prezen.schedule.length;
+				}
+
+				// なんでもロボットブースのカウント
+				if (data.freerobot && data.freerobot.schedule) {
+					counts['freerobot'] = data.freerobot.schedule.length;
 				}
 
 				// バッジを更新
