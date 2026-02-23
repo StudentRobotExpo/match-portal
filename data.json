@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:05",
+  "update": "12:06",
   "soccer": {
     "schedule": [
       {
@@ -310,6 +310,34 @@
       {
         "time": "14:00",
         "ftime": "14:20",
+        "team": "松戸ロボティクスMatsudo Robotics松戸ロボット研究会",
+        "detail": "",
+        "finish": false
+      },
+      {
+        "time": "14:20",
+        "ftime": "14:40",
+        "team": "reRo",
+        "detail": "",
+        "finish": false
+      },
+      {
+        "time": "14:40",
+        "ftime": "15:00",
+        "team": "中高生団体SAKURA Tempesta",
+        "detail": "FTC韓国大会に出場したロボットの実演",
+        "finish": false
+      },
+      {
+        "time": "15:00",
+        "ftime": "15:20",
+        "team": "OOEDO SAMURAI",
+        "detail": "",
+        "finish": false
+      },
+      {
+        "time": "15:20",
+        "ftime": "15:40",
         "team": "松戸ロボティクスMatsudo Robotics松戸ロボット研究会",
         "detail": "",
         "finish": false
