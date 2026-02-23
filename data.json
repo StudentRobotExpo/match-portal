@@ -164,15 +164,15 @@
         "time": "15:20",
         "team": "けいんず",
         "run": 2,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 0
       },
       {
         "time": "15:35",
         "team": "A.Z.K.",
         "run": 2,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 120
       }
     ]
   },
