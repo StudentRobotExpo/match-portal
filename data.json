@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:39",
+  "update": "12:40",
   "soccer": {
     "schedule": [
       {
@@ -182,7 +182,7 @@
         "time": "12:30",
         "ftime": "12:40",
         "name": "藤原 智貴",
-        "finish": false,
+        "finish": true,
         "title": "ともだちのつくりかた",
         "detail": ""
       },
@@ -277,7 +277,7 @@
       {
         "time": "15:30",
         "ftime": "15:40",
-        "name": "",
+        "name": "佐藤 恒太郎",
         "finish": false,
         "title": "",
         "detail": ""
