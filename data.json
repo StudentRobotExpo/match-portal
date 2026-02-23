@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "14:35",
+  "update": "14:36",
   "soccer": {
     "schedule": [
       {
@@ -32,9 +32,9 @@
         "time": "14:15",
         "team1": "VEGA",
         "team2": "Thrcot",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 9,
+        "score2": 1
       },
       {
         "time": "14:40",
