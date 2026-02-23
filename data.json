@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "14:58",
+  "update": "14:59",
   "soccer": {
     "schedule": [
       {
@@ -41,7 +41,7 @@
         "team1": "Gcraud Shuffle",
         "team2": "URAWA BEOLSAE",
         "finish": false,
-        "score1": null,
+        "score1": 8,
         "score2": null
       },
       {
@@ -129,29 +129,29 @@
         "time": "13:30",
         "team": "おしゃんてぃ",
         "run": 1,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 305
       },
       {
         "time": "13:50",
         "team": "けいんず",
         "run": 1,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 0
       },
       {
         "time": "14:05",
         "team": "A.Z.K.",
         "run": 1,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 115
       },
       {
         "time": "14:45",
         "team": "BoeingDGK",
         "run": 2,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 230
       },
       {
         "time": "15:05",
@@ -254,7 +254,7 @@
         "time": "14:35",
         "ftime": "14:55",
         "name": "中野 葉",
-        "finish": false,
+        "finish": true,
         "title": "画像処理",
         "detail": "世界大会でチームTachyonが使用した画像処理プログラムについて解説します"
       },
