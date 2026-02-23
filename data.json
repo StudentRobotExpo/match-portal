@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:19",
+  "update": "12:20",
   "soccer": {
     "schedule": [
       {
@@ -275,12 +275,12 @@
         "detail": "Windowsユーザー視点でUbuntuのメリットやデメリット、デュアルブート化の手順を話します。"
       },
       {
-        "time": "15:45",
-        "ftime": "15:55",
-        "name": "辻 琉貴",
+        "time": "",
+        "ftime": "",
+        "name": "",
         "finish": false,
-        "title": "BLDCモジュールを作った話",
-        "detail": "以前作ったBLDCモーターのモジュールについて話します"
+        "title": "",
+        "detail": ""
       }
     ]
   },
