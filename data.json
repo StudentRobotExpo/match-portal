@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "13:08",
+  "update": "13:09",
   "soccer": {
     "schedule": [
       {
@@ -198,7 +198,7 @@
         "time": "12:55",
         "ftime": "13:00",
         "name": "宮里 孝希",
-        "finish": false,
+        "finish": true,
         "title": "ドライバーとネジ使いこなせてる？ お前ら vs 俺",
         "detail": ""
       },
