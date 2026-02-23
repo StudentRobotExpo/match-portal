@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:12",
+  "update": "12:13",
   "soccer": {
     "schedule": [
       {
@@ -290,7 +290,7 @@
         "time": "13:00",
         "ftime": "13:20",
         "team": "reRo",
-        "detail": "",
+        "detail": "マイクロマウスとロボットレースの実演",
         "finish": false
       },
       {
@@ -318,7 +318,7 @@
         "time": "14:20",
         "ftime": "14:40",
         "team": "reRo",
-        "detail": "",
+        "detail": "マイクロマウスとロボットレースの実演",
         "finish": false
       },
       {
