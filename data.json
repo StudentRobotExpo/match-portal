@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "16:13",
+  "update": "16:14",
   "soccer": {
     "schedule": [
       {
@@ -64,9 +64,9 @@
         "time": "15:55",
         "team1": "VEGA",
         "team2": "つちのこキッカーズ",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 4,
+        "score2": 1
       }
     ]
   },
