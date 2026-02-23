@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:30",
+  "update": "12:31",
   "soccer": {
     "schedule": [
       {
@@ -205,7 +205,7 @@
       {
         "time": "13:05",
         "ftime": "13:10",
-        "name": "",
+        "name": "佐伯 明俊",
         "finish": false,
         "title": "",
         "detail": ""
