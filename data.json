@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "10:24",
+  "update": "10:25",
   "soccer": {
     "schedule": [
       {
@@ -294,9 +294,9 @@
         "finish": false
       },
       {
-        "time": "14:00",
-        "ftime": "14:30",
-        "team": "",
+        "time": "13:20",
+        "ftime": "13:40",
+        "team": "中高生団体SAKURA Tempesta\r\n",
         "detail": "",
         "finish": false
       }
