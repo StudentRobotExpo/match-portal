@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:31",
+  "update": "12:32",
   "soccer": {
     "schedule": [
       {
@@ -207,7 +207,7 @@
         "ftime": "13:10",
         "name": "佐伯 明俊",
         "finish": false,
-        "title": "",
+        "title": "ロボットのつくりかた",
         "detail": ""
       },
       {
