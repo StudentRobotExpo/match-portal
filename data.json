@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "14:01",
+  "update": "14:02",
   "soccer": {
     "schedule": [
       {
@@ -16,9 +16,9 @@
         "time": "13:25",
         "team1": "AIR",
         "team2": "つちのこキッカーズ",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 8,
+        "score2": 0
       },
       {
         "time": "13:50",
