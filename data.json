@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:56",
+  "update": "12:57",
   "soccer": {
     "schedule": [
       {
@@ -190,7 +190,7 @@
         "time": "12:45",
         "ftime": "12:50",
         "name": "渡邉 幸大朗",
-        "finish": false,
+        "finish": true,
         "title": "ロボカッパーから自称アーティストの道へ",
         "detail": "現在制作しているアート作品についてと自己紹介をしようと考えています。"
       },
