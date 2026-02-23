@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "13:28",
+  "update": "13:29",
   "soccer": {
     "schedule": [
       {
@@ -122,8 +122,8 @@
         "time": "13:15",
         "team": "BoeingDGK",
         "run": 1,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 208
       },
       {
         "time": "13:30",
@@ -214,7 +214,7 @@
         "time": "13:15",
         "ftime": "13:30",
         "name": "松戸ロボティクス",
-        "finish": false,
+        "finish": true,
         "title": "松戸ロボティクスの紹介",
         "detail": "松戸ロボティクスのロボット•活動紹介　来年度開催する技術イベントMatsudo Tech Labの紹介"
       },
