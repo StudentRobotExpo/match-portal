@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "14:30",
+  "update": "14:31",
   "soccer": {
     "schedule": [
       {
@@ -246,7 +246,7 @@
         "time": "14:25",
         "ftime": "14:30",
         "name": "多胡 侑哉",
-        "finish": false,
+        "finish": true,
         "title": "ロボティクスとRust",
         "detail": "Rustでロボットのコードを書いたときの良い点や悪い点をあげつらいます"
       },
