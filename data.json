@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:20",
+  "update": "12:21",
   "soccer": {
     "schedule": [
       {
@@ -211,32 +211,32 @@
         "detail": ""
       },
       {
-        "time": "13:20",
-        "ftime": "13:35",
+        "time": "13:15",
+        "ftime": "13:30",
         "name": "松戸ロボティクス",
         "finish": false,
         "title": "松戸ロボティクスの紹介",
         "detail": "松戸ロボティクスのロボット•活動紹介　来年度開催する技術イベントMatsudo Tech Labの紹介"
       },
       {
-        "time": "13:40",
-        "ftime": "13:45",
+        "time": "13:35",
+        "ftime": "13:40",
         "name": "宮里 孝希",
         "finish": false,
         "title": "ドライバーとネジ使いこなせてる？ お前ら vs 俺",
         "detail": ""
       },
       {
-        "time": "13:50",
-        "ftime": "14:00",
+        "time": "13:45",
+        "ftime": "13:55",
         "name": "Ri-one",
         "finish": false,
         "title": "Ri-oneの紹介など",
         "detail": ""
       },
       {
-        "time": "14:25",
-        "ftime": "14:35",
+        "time": "14:10",
+        "ftime": "14:25",
         "name": "高倉 圭大 (nop)",
         "finish": false,
         "title": "PID制御の先",
