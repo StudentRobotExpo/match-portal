@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:25",
+  "update": "12:26",
   "soccer": {
     "schedule": [
       {
@@ -235,40 +235,40 @@
         "detail": ""
       },
       {
-        "time": "14:25",
-        "ftime": "14:35",
+        "time": "14:10",
+        "ftime": "14:20",
         "name": "高倉 圭大 (nop)",
         "finish": false,
         "title": "PID制御の先",
         "detail": "PID制御、物事の制御について、知識を振り返りつつ、制御工学の中で個人的に好きな分野について話したいと思います。"
       },
       {
-        "time": "14:40",
-        "ftime": "14:45",
+        "time": "14:25",
+        "ftime": "14:30",
         "name": "多胡 侑哉",
         "finish": false,
         "title": "ロボティクスとRust",
         "detail": "Rustでロボットのコードを書いたときの良い点や悪い点をあげつらいます"
       },
       {
-        "time": "14:50",
-        "ftime": "15:10",
+        "time": "14:35",
+        "ftime": "14:55",
         "name": "中野 葉",
         "finish": false,
         "title": "画像処理",
         "detail": "世界大会でチームTachyonが使用した画像処理プログラムについて解説します"
       },
       {
-        "time": "15:15",
-        "ftime": "15:25",
+        "time": "15:00",
+        "ftime": "15:10",
         "name": "中野 湧",
         "finish": false,
         "title": "学生ロボットEXPO用のWebアプリを作った話",
         "detail": "試合情報、発表についての情報を提供するアプリの仕組みを紹介します"
       },
       {
-        "time": "15:30",
-        "ftime": "15:40",
+        "time": "15:15",
+        "ftime": "15:25",
         "name": "飯田 智彦",
         "finish": false,
         "title": "メインPCをデュアルブート化した話",
