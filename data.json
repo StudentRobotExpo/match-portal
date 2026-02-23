@@ -1,16 +1,16 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "13:16",
+  "update": "13:17",
   "soccer": {
     "schedule": [
       {
         "time": "13:00",
         "team1": "Gcraud Shuffle",
         "team2": "ICT_Laboratory",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 5,
+        "score2": 1
       },
       {
         "time": "13:25",
