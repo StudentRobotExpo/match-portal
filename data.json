@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "15:47",
+  "update": "15:48",
   "soccer": {
     "schedule": [
       {
@@ -56,9 +56,9 @@
         "time": "15:30",
         "team1": "Oi_DENGIKEN",
         "team2": "ICT_Laboratory",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 5,
+        "score2": 3
       },
       {
         "time": "15:55",
