@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "13:45",
+  "update": "13:46",
   "soccer": {
     "schedule": [
       {
@@ -222,7 +222,7 @@
         "time": "13:35",
         "ftime": "13:40",
         "name": "戸松 煌太",
-        "finish": false,
+        "finish": true,
         "title": "わくわくポスターづくり",
         "detail": "本イベントのポスターづくりにおいて気をつけたことについて話します。"
       },
