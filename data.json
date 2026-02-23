@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:16",
+  "update": "12:17",
   "soccer": {
     "schedule": [
       {
@@ -311,7 +311,7 @@
         "time": "14:00",
         "ftime": "14:20",
         "team": "松戸ロボティクスMatsudo Robotics松戸ロボット研究会",
-        "detail": "",
+        "detail": "ライントレースを行う輸送ロボットの実演をします",
         "finish": false
       },
       {
@@ -339,7 +339,7 @@
         "time": "15:20",
         "ftime": "15:40",
         "team": "松戸ロボティクスMatsudo Robotics松戸ロボット研究会",
-        "detail": "",
+        "detail": "ライントレースを行う輸送ロボットの実演をします",
         "finish": false
       }
     ]
