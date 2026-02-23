@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "15:10",
+  "update": "15:11",
   "soccer": {
     "schedule": [
       {
@@ -262,7 +262,7 @@
         "time": "15:00",
         "ftime": "15:10",
         "name": "中野 湧",
-        "finish": false,
+        "finish": true,
         "title": "学生ロボットEXPO用のWebアプリを作った話",
         "detail": "試合情報、発表についての情報を提供するアプリの仕組みを紹介します"
       },
