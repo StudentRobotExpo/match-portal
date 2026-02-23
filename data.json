@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "15:15",
+  "update": "15:16",
   "soccer": {
     "schedule": [
       {
@@ -157,8 +157,8 @@
         "time": "15:05",
         "team": "おしゃんてぃ",
         "run": 2,
-        "finish": false,
-        "score": null
+        "finish": true,
+        "score": 343
       },
       {
         "time": "15:20",
