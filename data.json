@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "13:54",
+  "update": "13:55",
   "soccer": {
     "schedule": [
       {
@@ -230,7 +230,7 @@
         "time": "13:45",
         "ftime": "13:55",
         "name": "Ri-one",
-        "finish": false,
+        "finish": true,
         "title": "Ri-oneの紹介など",
         "detail": ""
       },
