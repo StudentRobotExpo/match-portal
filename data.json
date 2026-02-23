@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "12:23",
+  "update": "12:24",
   "soccer": {
     "schedule": [
       {
@@ -304,7 +304,7 @@
         "time": "13:40",
         "ftime": "14:00",
         "team": "OOEDO SAMURAI",
-        "detail": "",
+        "detail": "ロボマスターのロボットの実演",
         "finish": false
       },
       {
@@ -332,7 +332,7 @@
         "time": "15:00",
         "ftime": "15:20",
         "team": "OOEDO SAMURAI",
-        "detail": "",
+        "detail": "ロボマスターのロボットの実演",
         "finish": false
       },
       {
