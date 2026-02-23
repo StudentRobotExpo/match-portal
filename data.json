@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "14:20",
+  "update": "14:21",
   "soccer": {
     "schedule": [
       {
@@ -238,7 +238,7 @@
         "time": "14:10",
         "ftime": "14:20",
         "name": "高倉 圭大 (nop)",
-        "finish": false,
+        "finish": true,
         "title": "PID制御の先",
         "detail": "PID制御、物事の制御について、知識を振り返りつつ、制御工学の中で個人的に好きな分野について話したいと思います。"
       },
