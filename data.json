@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "10:44",
+  "update": "10:45",
   "soccer": {
     "schedule": [
       {
@@ -297,7 +297,7 @@
         "time": "13:20",
         "ftime": "13:40",
         "team": "中高生団体SAKURA Tempesta",
-        "detail": "",
+        "detail": "FTC韓国大会に出場したロボットの実演",
         "finish": false
       }
     ]
