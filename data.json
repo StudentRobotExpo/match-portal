@@ -40,9 +40,9 @@
         "time": "14:40",
         "team1": "Gcraud Shuffle",
         "team2": "URAWA BEOLSAE",
-        "finish": false,
+        "finish": true,
         "score1": 8,
-        "score2": null
+        "score2": 0
       },
       {
         "time": "15:05",
