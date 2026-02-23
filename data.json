@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "14:56",
+  "update": "14:57",
   "soccer": {
     "schedule": [
       {
@@ -281,6 +281,22 @@
         "finish": false,
         "title": "基板設計の経験を研究に活かす例",
         "detail": ""
+      },
+      {
+        "time": "15:45",
+        "ftime": "15:55",
+        "name": "辻 琉貴",
+        "finish": false,
+        "title": "BLDCモジュールを作った話",
+        "detail": "以前作ったBLDCモーターのモジュールについて話します"
+      },
+      {
+        "time": "16:00",
+        "ftime": "16:15",
+        "name": "高橋 浩賢",
+        "finish": false,
+        "title": "基板設計の面白さ",
+        "detail": "プログラムと設計より基板はおもろい話"
       }
     ]
   },
