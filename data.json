@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "16:31",
+  "update": "16:32",
   "soccer": {
     "schedule": [
       {
@@ -76,28 +76,28 @@
         "time": "13:25",
         "team": "Tuton",
         "run": 1,
-        "finish": false,
+        "finish": true,
         "score": null
       },
       {
         "time": "13:40",
         "team": "Creator",
         "run": 1,
-        "finish": false,
+        "finish": true,
         "score": null
       },
       {
         "time": "14:15",
         "team": "鳩サブレ愛護団",
         "run": 1,
-        "finish": false,
+        "finish": true,
         "score": null
       },
       {
         "time": "14:40",
         "team": "Tuton",
         "run": 2,
-        "finish": false,
+        "finish": true,
         "score": null
       },
       {
