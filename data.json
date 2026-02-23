@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "14:11",
+  "update": "14:12",
   "soccer": {
     "schedule": [
       {
@@ -24,9 +24,9 @@
         "time": "13:50",
         "team1": "Oi_DENGIKEN",
         "team2": "URAWA BEOLSAE",
-        "finish": false,
-        "score1": null,
-        "score2": null
+        "finish": true,
+        "score1": 7,
+        "score2": 0
       },
       {
         "time": "14:15",
