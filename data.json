@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "10:21",
+  "update": "10:22",
   "soccer": {
     "schedule": [
       {
@@ -294,10 +294,10 @@
         "finish": false
       },
       {
-        "time": "15:00",
-        "ftime": "16:00",
-        "team": "-",
-        "detail": "自由開放",
+        "time": "14:00",
+        "ftime": "",
+        "team": "",
+        "detail": "",
         "finish": false
       }
     ]
