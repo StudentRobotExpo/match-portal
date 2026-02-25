@@ -1,7 +1,7 @@
 {
   "state": "open",
   "date": "2026/02/23",
-  "update": "19:04",
+  "update": "00:27",
   "soccer": {
     "schedule": [
       {
@@ -307,56 +307,56 @@
         "ftime": "13:20",
         "team": "reRo",
         "detail": "マイクロマウスとロボットレースの実演",
-        "finish": false
+        "finish": true
       },
       {
         "time": "13:20",
         "ftime": "13:40",
         "team": "中高生団体SAKURA Tempesta",
         "detail": "FTC韓国大会に出場したロボットの実演",
-        "finish": false
+        "finish": true
       },
       {
         "time": "13:40",
         "ftime": "14:00",
         "team": "OOEDO SAMURAI",
         "detail": "ロボマスターのロボットの実演",
-        "finish": false
+        "finish": true
       },
       {
         "time": "14:00",
         "ftime": "14:20",
         "team": "松戸ロボティクスMatsudo Robotics松戸ロボット研究会",
         "detail": "ライントレースを行う輸送ロボットの実演をします",
-        "finish": false
+        "finish": true
       },
       {
         "time": "14:20",
         "ftime": "14:40",
         "team": "reRo",
         "detail": "マイクロマウスとロボットレースの実演",
-        "finish": false
+        "finish": true
       },
       {
         "time": "14:40",
         "ftime": "15:00",
         "team": "中高生団体SAKURA Tempesta",
         "detail": "FTC韓国大会に出場したロボットの実演",
-        "finish": false
+        "finish": true
       },
       {
         "time": "15:00",
         "ftime": "15:20",
         "team": "OOEDO SAMURAI",
         "detail": "ロボマスターのロボットの実演",
-        "finish": false
+        "finish": true
       },
       {
         "time": "15:20",
         "ftime": "15:40",
         "team": "松戸ロボティクスMatsudo Robotics松戸ロボット研究会",
         "detail": "ライントレースを行う輸送ロボットの実演をします",
-        "finish": false
+        "finish": true
       }
     ]
   }
